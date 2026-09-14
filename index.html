@@ -1,1 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="THE FACTORY STORE — Trend. Wear. Repeat. Men's clothing and premium combos in Gurugram.">
+<title>THE FACTORY STORE | Trend. Wear. Repeat</title>
+<style>
+:root{--primary:#111827;--accent:#2563eb;--accent2:#1d4ed8;--bg:#f7f8fa;--card:#fff;--text:#111827;--muted:#6b7280;--line:#e5e7eb;--success:#15803d;--danger:#dc2626;--shadow:0 12px 35px rgba(15,23,42,.09)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text)}button,input,textarea{font:inherit}button{cursor:pointer}
+.header{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.header-inner{max-width:1120px;margin:auto;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{min-width:0}.brand h1{font-size:19px;margin:0;font-weight:900;letter-spacing:.5px}.brand p{margin:2px 0 0;color:var(--muted);font-size:12px}
+.header-actions{display:flex;gap:8px}.icon-btn{border:1px solid var(--line);background:#fff;border-radius:12px;padding:10px 12px;font-weight:700}.cart-btn{position:relative}.badge{position:absolute;right:-5px;top:-6px;background:var(--accent);color:#fff;min-width:20px;height:20px;border-radius:99px;font-size:11px;display:grid;place-items:center;padding:0 5px}
+.hero{max-width:1120px;margin:auto;padding:38px 16px 22px}.hero-box{background:linear-gradient(135deg,#111827,#334155);color:#fff;border-radius:24px;padding:28px 22px;box-shadow:var(--shadow)}.hero h2{margin:0 0 8px;font-size:clamp(28px,7vw,48px);line-height:1}.hero p{margin:0;color:#dbeafe;max-width:620px}.hero .location{margin-top:16px;font-size:13px;color:#cbd5e1}
+.main{max-width:1120px;margin:auto;padding:0 16px 100px}.filters{display:flex;gap:8px;overflow:auto;padding:10px 0 18px;scrollbar-width:none}.filters::-webkit-scrollbar{display:none}.filter{white-space:nowrap;border:1px solid var(--line);background:#fff;border-radius:999px;padding:9px 15px;color:#374151;font-weight:700}.filter.active{background:var(--primary);color:#fff;border-color:var(--primary)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.product{background:var(--card);border:1px solid var(--line);border-radius:17px;overflow:hidden;box-shadow:0 4px 15px rgba(15,23,42,.04);display:flex;flex-direction:column}.product-img{aspect-ratio:1/1.08;background:#eef2f7;overflow:hidden}.product-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s}.product:hover img{transform:scale(1.035)}.product-body{padding:13px}.category{font-size:10px;font-weight:800;color:var(--accent);letter-spacing:.7px;text-transform:uppercase}.product h3{font-size:14px;line-height:1.3;margin:5px 0}.desc{font-size:11px;color:var(--muted);line-height:1.45;margin:0 0 8px}.price{font-weight:900;font-size:17px;margin-bottom:10px}.add{width:100%;border:0;background:var(--accent);color:#fff;border-radius:11px;padding:10px;font-weight:800;transition:.2s}.add:hover{background:var(--accent2)}.add:active{transform:scale(.98)}
+.policy{margin-top:26px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px}.policy h3{margin:0 0 8px}.policy p{margin:0;color:var(--muted);font-size:13px;line-height:1.55}.policy strong{color:var(--text)}
+.footer{background:#111827;color:#cbd5e1;padding:28px 16px;text-align:center;font-size:12px}.footer strong{color:#fff}.footer a{color:#93c5fd;text-decoration:none}
+.whatsapp{position:fixed;right:16px;bottom:18px;z-index:25;background:#16a34a;color:#fff;text-decoration:none;border-radius:999px;padding:13px 16px;box-shadow:0 10px 25px rgba(22,163,74,.3);font-weight:800;font-size:13px}.cart-fab{position:fixed;right:16px;bottom:76px;z-index:25;border:0;background:var(--primary);color:#fff;width:54px;height:54px;border-radius:50%;box-shadow:0 10px 25px rgba(15,23,42,.25);font-size:22px}.cart-fab .badge{right:-2px;top:-2px}
+.overlay{position:fixed;inset:0;background:rgba(15,23,42,.55);z-index:50;display:none;align-items:flex-end}.overlay.open{display:flex}.modal{background:#fff;width:100%;max-height:92vh;border-radius:22px 22px 0 0;overflow:auto;animation:up .22s ease}@keyframes up{from{transform:translateY(25px);opacity:.7}to{transform:none;opacity:1}}.modal-head{position:sticky;top:0;background:#fff;z-index:2;display:flex;justify-content:space-between;align-items:center;padding:16px;border-bottom:1px solid var(--line)}.modal-head h2{margin:0;font-size:19px}.close{border:0;background:#f3f4f6;width:36px;height:36px;border-radius:50%;font-size:20px}.cart-content{max-width:760px;margin:auto;padding:14px 16px 22px}.cart-item{display:grid;grid-template-columns:64px 1fr auto;gap:11px;padding:12px 0;border-bottom:1px solid var(--line);align-items:center}.cart-item img{width:64px;height:72px;object-fit:cover;border-radius:10px;background:#f3f4f6}.cart-item h4{margin:0 0 4px;font-size:13px}.cart-price{font-size:12px;color:var(--muted)}.qty{display:flex;align-items:center;gap:7px;margin-top:7px}.qty button{border:1px solid var(--line);background:#fff;width:27px;height:27px;border-radius:8px;font-weight:900}.remove{border:0;background:none;color:var(--danger);font-size:11px;margin-top:5px;padding:0}.item-total{font-weight:900;font-size:13px;white-space:nowrap}.summary{padding:17px 0}.summary-row{display:flex;justify-content:space-between;margin:6px 0}.grand{font-size:19px;font-weight:900;border-top:1px solid var(--line);padding-top:12px;margin-top:10px}.checkout{width:100%;border:0;background:var(--accent);color:#fff;padding:13px;border-radius:12px;font-weight:900;margin-top:8px}.empty{text-align:center;padding:45px 10px;color:var(--muted)}.empty .big{font-size:40px}
+.form-wrap{padding:16px;max-width:760px;margin:auto}.form-wrap h3{margin-top:0}.field{margin-bottom:13px}.field label{display:block;font-size:12px;font-weight:800;margin-bottom:6px}.field input,.field textarea{width:100%;border:1px solid #d1d5db;border-radius:11px;padding:11px 12px;outline:none;background:#fff}.field textarea{min-height:85px;resize:vertical}.field input:focus,.field textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(37,99,235,.1)}.back{border:0;background:#f3f4f6;padding:9px 12px;border-radius:10px;font-weight:800;margin-bottom:14px}.notice{font-size:12px;color:var(--muted);line-height:1.5;background:#f8fafc;padding:11px;border-radius:10px;margin-bottom:15px}.submit{width:100%;border:0;background:var(--success);color:#fff;padding:13px;border-radius:12px;font-weight:900}.success{padding:38px 18px;text-align:center}.success .check{font-size:48px}.success h3{font-size:22px;margin:10px 0}.success p{color:var(--muted);line-height:1.5}.wa-link{display:inline-block;background:#16a34a;color:#fff;text-decoration:none;padding:12px 16px;border-radius:11px;font-weight:800}
+@media(min-width:700px){.grid{grid-template-columns:repeat(3,1fr)}.hero{padding-top:50px}.overlay{align-items:center}.modal{width:min(760px,94%);border-radius:22px}.cart-fab{bottom:24px}.whatsapp{bottom:24px;right:86px}}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="header-inner">
+    <div class="brand"><h1>THE FACTORY STORE</h1><p>Trend. Wear. Repeat</p></div>
+    <div class="header-actions"><button class="icon-btn" onclick="openCart()">🛒 Cart <span id="headCount">0</span></button></div>
+  </div>
+</header>
 
+<section class="hero">
+  <div class="hero-box">
+    <h2>Trend. Wear. Repeat.</h2>
+    <p>Premium men's clothing combos at simple, local-store prices.</p>
+    <div class="location">📍 Gurugram &nbsp;•&nbsp; 📞 9826526475</div>
+  </div>
+</section>
+
+<main class="main">
+  <div class="filters" id="filters"></div>
+  <section class="grid" id="products"></section>
+  <section class="policy">
+    <h3>Easy Return & Refund Policy</h3>
+    <p><strong>Any type of genuine product problem is covered.</strong> We accept return/refund requests for: wrong product, broken product, missing product, colour coming out after washing, quality issue, size issue, or any other product-related problem. Please contact the shop to arrange the return/refund.</p>
+  </section>
+</main>
+
+<footer class="footer">
+  <div><strong>THE FACTORY STORE</strong> — Trend. Wear. Repeat</div>
+  <div>Gurugram • 9826526475 • <a href="mailto:vertexofficialindia@gmail.com">vertexofficialindia@gmail.com</a></div>
+  <div style="margin-top:8px">Online ordering only. No online payment is processed on this website.</div>
+</footer>
+
+<button class="cart-fab" onclick="openCart()" aria-label="Open cart">🛒<span class="badge" id="fabCount">0</span></button>
+<a class="whatsapp" href="https://wa.me/919826526475" target="_blank" rel="noopener">💬 Chat on WhatsApp</a>
+
+<div class="overlay" id="cartOverlay" onclick="closeOnBackdrop(event,'cartOverlay')">
+  <div class="modal">
+    <div class="modal-head"><h2>Your Cart</h2><button class="close" onclick="closeModal('cartOverlay')">×</button></div>
+    <div class="cart-content" id="cartContent"></div>
+  </div>
+</div>
+
+<div class="overlay" id="checkoutOverlay" onclick="closeOnBackdrop(event,'checkoutOverlay')">
+  <div class="modal">
+    <div class="modal-head"><h2>Place Order</h2><button class="close" onclick="closeModal('checkoutOverlay')">×</button></div>
+    <div class="form-wrap">
+      <button class="back" onclick="closeModal('checkoutOverlay');openCart()">← Back to cart</button>
+      <div class="notice">No payment is taken online. Submit your order and THE FACTORY STORE will contact you on WhatsApp to confirm availability, pricing and delivery.</div>
+      <form id="orderForm" action="https://formspree.io/f/xeaqbnaj" method="POST">
+        <div class="field"><label for="name">Customer Name *</label><input id="name" name="customer_name" required autocomplete="name"></div>
+        <div class="field"><label for="phone">Phone Number *</label><input id="phone" name="customer_phone" required type="tel" inputmode="tel" autocomplete="tel"></div>
+        <div class="field"><label for="address">Delivery Address *</label><textarea id="address" name="delivery_address" required autocomplete="street-address"></textarea></div>
+        <div class="field"><label for="instructions">Special Instructions (optional)</label><textarea id="instructions" name="special_instructions"></textarea></div>
+        <input type="hidden" name="order_summary" id="orderSummary">
+        <input type="hidden" name="grand_total" id="orderTotal">
+        <input type="hidden" name="_subject" value="New Order — THE FACTORY STORE">
+        <button class="submit" id="submitBtn" type="submit">Place Order</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="overlay" id="successOverlay">
+  <div class="modal">
+    <div class="success">
+      <div class="check">✅</div>
+      <h3>Order placed!</h3>
+      <p>THE FACTORY STORE will contact you on WhatsApp to confirm.</p>
+      <a class="wa-link" href="https://wa.me/919826526475" target="_blank" rel="noopener">Message us on WhatsApp</a>
+      <br><button class="back" style="margin-top:15px" onclick="closeModal('successOverlay')">Continue Shopping</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const PRODUCTS=[
+ {id:1,name:"MENS FULL COMBO",price:1099,category:"CLOTHING",image:"https://i.ibb.co/JwF38y0k/Whats-App-Image-2026-09-14-at-12-16-36-PM-2.jpg",short:"PREMIUM COMBO",desc:"FULL COMBO WITH SHOES"},
+ {id:2,name:"MENS FULL COMBO",price:1099,category:"CLOTHING",image:"https://i.ibb.co/FcvPJrf/Whats-App-Image-2026-09-14-at-12-16-36-PM-1.jpg",short:"PREMIUM COMBO",desc:"FULL COMBO WITH SHOES"},
+ {id:3,name:"MENS FULL COMBO",price:1099,category:"CLOTHING",image:"https://i.ibb.co/jZg29xdv/Whats-App-Image-2026-09-14-at-12-16-36-PM.jpg",short:"PREMIUM COMBO",desc:"FULL COMBO WITH SHOES"}
+];
+const RETURN_TEXT="Return/refund accepted for wrong product, broken product, missing product, colour coming out after washing, quality issue, size issue, or any other product-related problem.";
+let cart=JSON.parse(localStorage.getItem("factoryStoreCart")||"[]");
+const money=n=>"₹"+Number(n).toLocaleString("en-IN");
+const save=()=>{localStorage.setItem("factoryStoreCart",JSON.stringify(cart));updateCounts();};
+function updateCounts(){const n=cart.reduce((s,x)=>s+x.qty,0);document.getElementById("headCount").textContent=n;document.getElementById("fabCount").textContent=n}
+function renderFilters(){document.getElementById("filters").innerHTML=['ALL',...new Set(PRODUCTS.map(p=>p.category))].map((c,i)=>`<button class="filter ${i===0?'active':''}" data-cat="${c}" onclick="filterProducts('${c}',this)">${c}</button>`).join("")}
+function filterProducts(cat,btn){document.querySelectorAll(".filter").forEach(b=>b.classList.remove("active"));btn.classList.add("active");renderProducts(cat)}
+function renderProducts(cat="ALL"){const list=cat==="ALL"?PRODUCTS:PRODUCTS.filter(p=>p.category===cat);document.getElementById("products").innerHTML=list.map(p=>`<article class="product"><div class="product-img"><img src="${p.image}" loading="lazy" alt="${p.name} - ${p.short} - ${p.desc}"></div><div class="product-body"><div class="category">${p.category}</div><h3>${p.name}</h3><p class="desc">${p.short} • ${p.desc}<br>${RETURN_TEXT}</p><div class="price">${money(p.price)}</div><button class="add" onclick="addToCart(${p.id})">Add to Cart</button></div></article>`).join("")}
+function addToCart(id){const item=cart.find(x=>x.id===id);if(item)item.qty++;else cart.push({id,qty:1});save();renderCart();const b=document.getElementById("fabCount");b.animate([{transform:"scale(1)"},{transform:"scale(1.45)"},{transform:"scale(1)"}],{duration:350});}
+function changeQty(id,delta){const item=cart.find(x=>x.id===id);if(!item)return;item.qty+=delta;if(item.qty<=0)cart=cart.filter(x=>x.id!==id);save();renderCart()}
+function removeItem(id){cart=cart.filter(x=>x.id!==id);save();renderCart()}
+function getDetailedCart(){return cart.map(x=>({...PRODUCTS.find(p=>p.id===x.id),qty:x.qty})).filter(Boolean)}
+function total(){return getDetailedCart().reduce((s,x)=>s+x.price*x.qty,0)}
+function renderCart(){const el=document.getElementById("cartContent"),items=getDetailedCart();if(!items.length){el.innerHTML='<div class="empty"><div class="big">🛒</div><h3>Your cart is empty</h3><p>Add a product to start your order.</p></div>';return}
+el.innerHTML=items.map(x=>`<div class="cart-item"><img src="${x.image}" loading="lazy" alt="${x.name}"><div><h4>${x.name}</h4><div class="cart-price">${money(x.price)} each</div><div class="qty"><button onclick="changeQty(${x.id},-1)">−</button><b>${x.qty}</b><button onclick="changeQty(${x.id},1)">+</button></div><button class="remove" onclick="removeItem(${x.id})">Remove</button></div><div class="item-total">${money(x.price*x.qty)}</div></div>`).join("")+`<div class="summary"><div class="summary-row"><span>Subtotal</span><b>${money(total())}</b></div><div class="summary-row grand"><span>Grand Total</span><span>${money(total())}</span></div><button class="checkout" onclick="openCheckout()">Place Order</button></div>`}
+function openCart(){renderCart();document.getElementById("cartOverlay").classList.add("open");document.body.style.overflow="hidden"}
+function openCheckout(){if(!cart.length)return;closeModal("cartOverlay");document.getElementById("checkoutOverlay").classList.add("open");document.body.style.overflow="hidden";buildHiddenSummary()}
+function buildHiddenSummary(){const lines=getDetailedCart().map(x=>`${x.name} | Qty: ${x.qty} | Unit Price: ${money(x.price)} | Item Total: ${money(x.price*x.qty)}`).join("\\n");document.getElementById("orderSummary").value=`THE FACTORY STORE — NEW ORDER\\n\\nITEMS:\\n${lines}\\n\\nGRAND TOTAL: ${money(total())}\\n\\nRETURN POLICY: ${RETURN_TEXT}`;document.getElementById("orderTotal").value=money(total())}
+function closeModal(id){document.getElementById(id).classList.remove("open");document.body.style.overflow=""}
+function closeOnBackdrop(e,id){if(e.target.id===id)closeModal(id)}
+document.getElementById("orderForm").addEventListener("submit",async e=>{e.preventDefault();buildHiddenSummary();const form=e.currentTarget,btn=document.getElementById("submitBtn");btn.disabled=true;btn.textContent="Sending Order…";try{const r=await fetch(form.action,{method:"POST",body:new FormData(form),headers:{Accept:"application/json"}});if(!r.ok)throw new Error("send failed");cart=[];save();form.reset();closeModal("checkoutOverlay");document.getElementById("successOverlay").classList.add("open");document.body.style.overflow="hidden"}catch(err){alert("We could not send the order right now. Please try again, or contact the shop on WhatsApp.");}finally{btn.disabled=false;btn.textContent="Place Order"}});
+renderFilters();renderProducts();updateCounts();
+</script>
+</body>
+  </html>
